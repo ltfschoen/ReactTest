@@ -1,2 +1,3 @@
 # ReactTest
-Learning React again
+
+* Run with `./node_modules/.bin/webpack -d --watch`
