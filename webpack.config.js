@@ -16,6 +16,19 @@ var config = {
     output: {
         path: BUILD_DIR,
         filename: 'bundle.js'
+    },
+
+    module: {
+
+        // Array of loader properties as elements (i.e. babel-loader, etc)
+        loaders: [
+            {
+                // File extension (i.e. .js and .jsx) the loader processes via the test property
+                test: /\.jsx?/,
+                include: APP_DIR,
+                loader: 'babel' // Name of the loader (i.e. babel-loader)
+            }
+        ]
     }
 };
 
