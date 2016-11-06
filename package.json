@@ -1,0 +1,22 @@
+{
+  "name": "react-test",
+  "version": "1.0.0",
+  "description": "Learning React again",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ltfschoen/ReactTest.git"
+  },
+  "author": "Luke Schoen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ltfschoen/ReactTest/issues"
+  },
+  "homepage": "https://github.com/ltfschoen/ReactTest#readme",
+  "dependencies": {
+    "webpack": "^1.13.3"
+  }
+}
