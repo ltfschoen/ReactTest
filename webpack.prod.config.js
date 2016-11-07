@@ -44,6 +44,15 @@ var config = {
         ]
     },
 
+    plugins: [
+        new webpack.DefinePlugin({
+            "process.env": {
+                NODE_ENV: JSON.stringify("production"),
+                PORT: 5000
+            }
+        })
+    ],
+
     devtool: 'source-map'
 };
 
