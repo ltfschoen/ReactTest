@@ -15,7 +15,8 @@ var config = {
     // Instructions for Webpack to output bundle.js after bundling process
     output: {
         path: BUILD_DIR,
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        publicPath: "/src/client/"
     },
 
     module: {
