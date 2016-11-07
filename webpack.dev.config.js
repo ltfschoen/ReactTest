@@ -7,15 +7,22 @@ var BUILD_DIR = path.resolve(__dirname, 'src/client/public');
 // Path of React.js codebase
 var APP_DIR = path.resolve(__dirname, 'src/client/app');
 
+// Webpack configuration object - https://github.com/webpack/docs/wiki/Configuration
 var config = {
 
     // Starting point of app
-    entry: APP_DIR + '/index.jsx',
+    entry: {
+        'bundleIndexEntry': APP_DIR + '/index.jsx'
+    },
 
     // Instructions for Webpack to output bundle.js after bundling process
     output: {
         path: BUILD_DIR,
-        filename: 'bundle.js'
+        filename: '[name].js', // bundleIndexEntry.js
+        publicPath: '/src/client/',
+        sourceMapFilename: '[name].js.map',
+        devtoolModuleFilenameTemplate: 'webpack:///[resource-path]?[hash]',
+        devtoolFallbackModuleFilenameTemplate: 'webpack:///[resourcePath]?[hash]'
     },
 
     module: {
@@ -31,7 +38,10 @@ var config = {
                 loader: 'babel' // Name of the loader (i.e. babel is short for babel-loader)
             }
         ]
-    }
+    },
+
+    devtool: 'source-map'
 };
 
+// CommonJS style
 module.exports = config;
