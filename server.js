@@ -2,8 +2,8 @@ var express = require('express');
 var path = require('path');
 
 var app = express();
-
-app.set('port', (process.env.PORT || 5000));
+var isDev = (process.env.NODE_ENV == 'dev');
+app.set('port', (isDev ? process.env.PORT : 5000));
 var publicPath = path.resolve(__dirname, 'src/client');
 
 app.use(express.static(publicPath));

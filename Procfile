@@ -1,1 +1,1 @@
-web: npm run webpack_prod; npm run express-server;
+web: npm run express-server;

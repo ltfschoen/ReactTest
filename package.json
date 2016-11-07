@@ -6,7 +6,7 @@
     "webpack_dev_watch": "./node_modules/.bin/webpack -d --watch --config webpack.dev.config.js --progress --profile",
     "express-server": "node ./server",
     "dev": "concurrently --kill-others \"npm run webpack_dev_watch\" \"npm run express-server\"",
-    "webpack_prod": "./node_modules/.bin/webpack -p --config webpack.prod.config.js",
+    "postinstall": "node deploy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
