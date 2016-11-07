@@ -10,13 +10,18 @@ var APP_DIR = path.resolve(__dirname, 'src/client/app');
 var config = {
 
     // Starting point of app
-    entry: APP_DIR + '/index.jsx',
+    entry: {
+        'bundleIndexEntry': APP_DIR + '/index.jsx'
+    },
 
     // Instructions for Webpack to output bundle.js after bundling process
     output: {
         path: BUILD_DIR,
-        filename: 'bundle.js',
-        publicPath: "/src/client/"
+        filename: '[name].js', // bundleIndexEntry.js
+        publicPath: '/src/client/',
+        sourceMapFilename: '[name].js.map',
+        devtoolModuleFilenameTemplate: 'webpack:///[resource-path]?[hash]',
+        devtoolFallbackModuleFilenameTemplate: 'webpack:///[resourcePath]?[hash]'
     },
 
     module: {
@@ -32,7 +37,9 @@ var config = {
                 loader: 'babel' // Name of the loader (i.e. babel is short for babel-loader)
             }
         ]
-    }
+    },
+
+    devtool: 'source-map'
 };
 
 module.exports = config;
