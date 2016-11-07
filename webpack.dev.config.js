@@ -22,11 +22,13 @@ var config = {
 
         // Array of loader properties as elements (i.e. babel-loader, etc)
         loaders: [
+            // Convert JS written in ES6 to ES5
             {
                 // File extension (i.e. .js and .jsx) the loader processes via the test property
                 test: /\.jsx?/,
                 include: APP_DIR,
-                loader: 'babel' // Name of the loader (i.e. babel-loader)
+                exclude: /(node_modules|bower_components)/,
+                loader: 'babel' // Name of the loader (i.e. babel is short for babel-loader)
             }
         ]
     }

@@ -4,8 +4,8 @@
   "description": "Learning React again",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack -d --watch",
-    "build" : "webpack -p",
+    "webpack_dev_watch": "./node_modules/.bin/webpack -d --watch --config webpack.dev.config.js",
+    "webpack_prod": "./node_modules/.bin/webpack -p --config webpack.prod.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
