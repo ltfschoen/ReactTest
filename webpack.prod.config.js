@@ -35,6 +35,11 @@ var config = {
                 include: APP_DIR,
                 exclude: /(node_modules|bower_components)/,
                 loader: 'babel' // Name of the loader (i.e. babel is short for babel-loader)
+            },
+            // CSS
+            {
+                test: /\.css$/,
+                loader: 'style!css' // Short for style-loader!css-loader
             }
         ]
     },
